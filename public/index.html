@@ -40,9 +40,13 @@
 
       <!-- Aqui un boton -->
       <div>
-        <button class="btn btn-red">
+        <button class="btn btn-red" onclick="getDeterminant()">
           Calcular determinante
         </button>
+        <h4>
+          La determinante es:
+          <span id="result"></span>
+        </h4>
       </div>
     </div>
 
@@ -52,6 +56,7 @@
       <input type="submit" value="Enviar" />
     </form>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
     <script src="/js/matrix.js"></script>
   </body>
 </html>

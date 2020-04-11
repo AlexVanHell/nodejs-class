@@ -3,9 +3,11 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 const app = express();
+const cors = require('cors');
 
 const Matrix = require('./exercise/functions/matrix');
 
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -58,6 +60,6 @@ app.post('/matrix', function(req, res) {
   });
 });
 
-app.listen(3000, function() {
-  console.log("App is running at http://localhost:3000");
+app.listen(3001, function() {
+  console.log("App is running at http://localhost:3001");
 });
