@@ -206,3 +206,147 @@ INSERT INTO public.profesor (
 	identification_card, created_at, updated_at, person_id
 )
 SELECT 'MSD123456789', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, currval('person_id_seq');
+
+UPDATE person SET first_name = 'Fulano 1', last_name = 'Perez' WHERE id = 2;
+UPDATE profesor SET identification_card = 'FUL1' WHERE id = 1;
+
+INSERT INTO public.person (
+	first_name, last_name, second_last_name, birth_date, email, password, phone_number, verified, created_at, updated_at)
+VALUES (
+	'Fulano 2', 'Sanchez', '', null, 'fulano2.prof@mail.com', 'hola123', '123456789', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+);
+
+INSERT INTO public.profesor (
+	identification_card, created_at, updated_at, person_id
+)
+SELECT 'FUL2', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, currval('person_id_seq');
+
+INSERT INTO public.person (
+	first_name, last_name, second_last_name, birth_date, email, password, phone_number, verified, created_at, updated_at)
+VALUES (
+	'Fulano 3', 'Sanchez', '', null, 'fulano2.prof@mail.com', 'hola123', '123456789', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+);
+
+INSERT INTO public.profesor (
+	identification_card, created_at, updated_at, person_id
+)
+SELECT 'FUL3', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, currval('person_id_seq');
+
+INSERT INTO public.person (
+	first_name, last_name, second_last_name, birth_date, email, password, phone_number, verified, created_at, updated_at)
+VALUES (
+	'Fulano 4', 'Sanchez', '', null, 'fulano2.prof@mail.com', 'hola123', '123456789', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+);
+
+INSERT INTO public.profesor (
+	identification_card, created_at, updated_at, person_id
+)
+SELECT 'FUL4', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, currval('person_id_seq');
+
+INSERT INTO public.person (
+	first_name, last_name, second_last_name, birth_date, email, password, phone_number, verified, created_at, updated_at)
+VALUES (
+	'Fulano 5', 'Sanchez', '', null, 'fulano2.prof@mail.com', 'hola123', '123456789', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+);
+
+INSERT INTO public.profesor (
+	identification_card, created_at, updated_at, person_id
+)
+SELECT 'FUL5', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, currval('person_id_seq');
+
+INSERT INTO public.person (
+	first_name, last_name, second_last_name, birth_date, email, password, phone_number, verified, created_at, updated_at)
+VALUES (
+	'Fulano 6', 'Sanchez', '', null, 'fulano2.prof@mail.com', 'hola123', '123456789', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+);
+
+INSERT INTO public.profesor (
+	identification_card, created_at, updated_at, person_id
+)
+SELECT 'FUL6', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, currval('person_id_seq');
+
+UPDATE person SET email = 'fulano3.prof@mail.com' WHERE id = 4;
+UPDATE person SET email = 'fulano4.prof@mail.com' WHERE id = 5;
+UPDATE person SET email = 'fulano5.prof@mail.com' WHERE id = 6;
+UPDATE person SET email = 'fulano6.prof@mail.com' WHERE id = 7;
+
+INSERT INTO class_schedule	(
+	subject_id, classroom_id, profesor_id, week_day, start_time, end_time, created_at, updated_at
+) VALUES
+--Prof 1
+(
+	1, 17, 1, 1, '18:00', '20:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	1, 17, 1, 3, '18:00', '20:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	1, 17, 1, 5, '18:00', '20:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	4, 13, 1, 2, '14:00', '16:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	4, 13, 1, 4, '14:00', '16:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+),
+
+--Prof 2
+(
+	2, 15, 4, 1, '16:00', '18:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	2, 15, 4, 3, '16:00', '18:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	2, 15, 4, 5, '16:00', '18:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	5, 16, 4, 2, '20:00', '22:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	5, 16, 4, 4, '20:00', '22:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+),
+
+--Prof 3
+(
+	3, 14, 5, 1, '20:00', '22:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	3, 12, 5, 3, '20:00', '22:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	3, 14, 5, 5, '20:00', '22:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	6, 14, 5, 2, '18:00', '20:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	6, 14, 5, 4, '18:00', '20:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+),
+
+--Prof 4
+(
+	7, 1, 6, 1, '18:00', '20:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	7, 1, 6, 3, '18:00', '20:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	7, 1, 6, 5, '18:00', '20:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	11, 2, 6, 2, '14:00', '16:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	11, 2, 6, 4, '14:00', '16:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+),
+
+--Prof 5
+(
+	8, 4, 7, 1, '16:00', '18:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	8, 4, 7, 3, '16:00', '18:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	8, 4, 7, 5, '16:00', '18:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	10, 5, 7, 2, '20:00', '22:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	10, 5, 7, 4, '20:00', '22:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+),
+
+--Prof 6
+(
+	9, 3, 8, 1, '20:00', '22:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	9, 3, 8, 3, '20:00', '22:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	9, 12, 8, 5, '20:00', '22:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	12, 12, 8, 2, '18:00', '20:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+), (
+	12, 3, 8, 4, '18:00', '20:00', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
+);
